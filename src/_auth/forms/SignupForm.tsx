@@ -6,13 +6,12 @@ import { useToast } from "@/components/ui/use-toast"
 
 import Loader from "@/components/shared/Loader"
 import { Button } from "@/components/ui/button"
-import { createUserAccount } from "@/lib/appwrite/api"
+import { useUserContext } from "@/context/AuthContext"
+import { useCreateUserAccount, useSignInAccount } from "@/lib/react-query/queriesAndMutations"
 import { SignupValidation } from "@/lib/validation"
 import { useForm } from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom"
 import { z } from "zod"
-import { useCreateUserAccount, useSignInAccount} from "@/lib/react-query/queriesAndMutations"
-import { useUserContext } from "@/context/AuthContext"
 
 const SignupForm = () => {
   const { toast } = useToast();
