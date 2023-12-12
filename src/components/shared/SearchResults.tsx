@@ -10,16 +10,14 @@ type SearchResultsProps = {
 const SearchResults = ({ isSearchFetching, searchedPosts }: SearchResultsProps) => {
   if (isSearchFetching) return <Loader />
 
-  if (searchedPosts.documents.length > 0) {
+  if (searchedPosts && searchedPosts.documents.length > 0) {
     return (
-     <GridPostList />
+     <GridPostList posts={searchedPosts.documents} />
     )
   }
 
   return (
-    <div>
-
-    </div>
+    <p className="text-light-4 mt-10 text-center w-full">No results found</p>
   )
 }
 
